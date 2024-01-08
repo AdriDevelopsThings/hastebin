@@ -18,7 +18,7 @@ impl DataSource {
         let delete_older_than = env::var("AUTO_DELETE_OLDER_THAN")
             .unwrap_or_else(|_| "172800".to_string()) // 2 days
             .parse::<u64>()
-            .expect("Error while parsing environment variable 'AUTO_DELETE_OLDER_THANL'");
+            .expect("Error while parsing environment variable 'AUTO_DELETE_OLDER_THAN'");
         if interval == 0 || delete_older_than == 0 {
             // auto delete is disabled
             return;
