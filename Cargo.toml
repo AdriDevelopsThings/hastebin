@@ -3,6 +3,7 @@ name = "hastebin"
 version = "0.1.0"
 edition = "2021"
 authors = ["AdriDoesThings <contact@adridoesthings.com>"]
+description = "A minimalistic hastebin server"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
