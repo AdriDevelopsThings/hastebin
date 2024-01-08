@@ -8,9 +8,12 @@ authors = ["AdriDoesThings <contact@adridoesthings.com>"]
 
 [dependencies]
 axum = { version = "0.7" }
+env_logger = "0.10.1"
 log = "0.4.20"
 mime_guess = "2.0.4"
+rand = "0.8.5"
 serde = { version = "1.0", features = ["derive"] }
+sha2 = "0.10.8"
 tokio = { version = "1.29", features = ["full"] }
 
 [profile.release]

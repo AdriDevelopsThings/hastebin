@@ -1,4 +1,4 @@
-FROM rust:alpine as build-backend
+FROM rust:alpine as build
 WORKDIR /build
 
 RUN apk add musl-dev
@@ -13,9 +13,11 @@ WORKDIR /app
 
 ENV PATH="$PATH:/app/bin"
 
-COPY --from=build-backend /build/target/release/axum-template /app/bin/axum-template
+COPY --from=build /build/target/release/hastebin /app/bin/hastebin
 
 ENV LISTEN_ADDRESS=0.0.0.0:80
 EXPOSE 80
+ENV DATA_DIRECTORY=/data
+VOLUME [ "/data" ]
 
-CMD [ "/app/bin/axum-template" ]
+CMD [ "/app/bin/hastebin" ]
