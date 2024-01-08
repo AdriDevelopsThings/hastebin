@@ -53,7 +53,7 @@ pub async fn modify_file(
         data_source
             .modify_file(id, filename, change_key, body.to_vec())
             .await?;
-        Ok("Success".into_response())
+        Ok(StatusCode::NO_CONTENT.into_response())
     } else {
         Ok((StatusCode::BAD_REQUEST, "Change key needed").into_response())
     }
@@ -67,7 +67,7 @@ pub async fn delete_file(
     if let Some(change_key) = headers.get("Change-Key") {
         let change_key = change_key.to_str().unwrap().to_string();
         data_source.delete_file(id, filename, change_key).await?;
-        Ok("Success".into_response())
+        Ok(StatusCode::NO_CONTENT.into_response())
     } else {
         Ok((StatusCode::BAD_REQUEST, "Change key needed").into_response())
     }
