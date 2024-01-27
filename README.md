@@ -3,13 +3,13 @@
 ## Installation
 ### Docker
 Just pull the docker image:
-´´´
+```
 docker pull ghcr.io/adridevelopsthings/hastebin:main
-´´´
+```
 and run the docker image:
-´´´
+```
 docker run --name hastebin -d -p 80:80 -v ./data:/data ghcr.io/adridevelopsthings/hastebin:main
-´´´
+```
 
 ### Build it yourself
 Build a binary with cargo yourself:
